@@ -38,8 +38,7 @@
 
     <!-- TODO #4 - Loop over the search results to display all job fields. -->
 
-    <table class="job-listing">
-        <th:block th:each="job : ${jobs}">
+    <table th:each="job: ${jobs}" class="table job-listing">
             <tr>
                 <td th:text="'ID: ' + ${job.id}"></td>
             </tr>
@@ -58,11 +57,13 @@
             <tr>
                 <td th:text="'Skill: ' + ${job.coreCompetency}"></td>
             </tr>
-        </th:block>
+
+<!--        </th:block>-->
 
     </table>
 
 </div>
+<div th:if="noResult !=null" class="container"><span th:text="${noResult}"></span></div>
 <!--<p th:unless='${jobs.size() > 0}'>No results found</p>-->
 
 </body>

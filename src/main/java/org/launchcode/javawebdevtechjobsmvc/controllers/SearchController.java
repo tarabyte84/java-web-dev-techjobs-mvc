@@ -34,6 +34,7 @@ public class SearchController {
         }
         model.addAttribute("jobs", jobs);
         model.addAttribute("columns", columnChoices);
+        model.addAttribute("noResult", "No results found");
         return "search";
     }
 
